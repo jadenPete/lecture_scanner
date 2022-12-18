@@ -6,11 +6,6 @@ import sys
 def bounding_boxes(image):
 	image_blurred = cv2.GaussianBlur(image, (3, 3), 0)
 	image_canny = cv2.Canny(image_blurred, 50, 100)
-
-	cv2.imshow("Test", image_canny)
-	cv2.waitKey()
-	cv2.destroyAllWindows()
-
 	image_contours = cv2.findContours(
 		image_canny,
 		mode=cv2.RETR_EXTERNAL,
